@@ -9,6 +9,7 @@ const prodConfig = {
     mode: 'production',
     output: {
         filename: '[name].[contenthash].js',
+        publicPath: '/container/latest/',
     },
     plugins: [
         new ModuleFederationPlugin({
@@ -17,7 +18,7 @@ const prodConfig = {
                 marketing: `marketing@${domain}/marketing/remoteEntry.js`
             },
             shared: packageJson.dependencies
-        })
+        }),
     ]
 };
 
